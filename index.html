@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Смотри что нашёл</title>
+</head>
+<body style="text-align:center; padding:60px; background:#111; color:#fff;">
+<h1>нажми на кнопку </h1>
+<button onclick="fart()" style="font-size:22px; padding:20px 40px;">Нажми чтобы увидеть</button>
+<audio id="s" src="fart.mp3"></audio>
+<script>
+function fart() {
+  var s = document.getElementById('s');
+  s.play();
+  var n = 0;
+  var t = setInterval(function(){ s.play(); n++; if(n>4) clearInterval(t); }, 700);
+}
+</script>
+</body>
+</html>
