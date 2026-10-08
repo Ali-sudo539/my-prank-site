@@ -1,20 +1,129 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-<meta charset="utf-8">
-<title>зайди чтобы зарегистрироваться на код будущего </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Button</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background:
+                radial-gradient(circle at top, #3b2b72, transparent 40%),
+                linear-gradient(135deg, #080812, #15152b);
+            color: white;
+        }
+        .card {
+            width: 90%;
+            max-width: 420px;
+            padding: 35px 25px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: appear 0.7s ease;
+        }
+        h1 {
+            margin-top: 0;
+            font-size: 32px;
+        }
+        .description {
+            color: #bdbdd0;
+            margin-bottom: 30px;
+        }
+        .sound-button {
+            width: 150px;
+            height: 150px;
+            border: none;
+            border-radius: 50%;
+            font-size: 55px;
+            cursor: pointer;
+            background: linear-gradient(145deg, #8b5cf6, #6366f1);
+            box-shadow:
+                0 10px 30px rgba(99, 102, 241, 0.5);
+            transition: 0.2s;
+        }
+        .sound-button:hover {
+            transform: scale(1.07);
+        }
+        .sound-button:active {
+            transform: scale(0.92);
+        }
+        .volume-container {
+            margin-top: 35px;
+        }
+        .volume-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: #d8d8e5;
+        }
+        input[type="range"] {
+            width: 100%;
+            cursor: pointer;
+            accent-color: #8b5cf6;
+        }
+        .volume-value {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #aaaabd;
+        }
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
-<body style="text-align:center; padding:60px; background:#111; color:#fff;">
-<h1>нажми на кнопку </h1>
-<button onclick="fart()" style="font-size:22px; padding:20px 40px;">Нажми чтобы зарегистрироваться </button>
-<audio id="s" src="fart.mp3"></audio>
-<script>
-function fart() {
-  var s = document.getElementById('s');
-  s.play();
-  var n = 0;
-  var t = setInterval(function(){ s.play(); n++; if(n>4) clearInterval(t); }, 700);
-}
-</script>
+<body>
+    <div class="card">
+        <h1>🔊 Sound Button</h1>
+        <p class="description">
+            Нажми на кнопку и послушай звук
+        </p>
+        <button class="sound-button" onclick="playSound()">
+            🔊
+        </button>
+        <div class="volume-container">
+            <div class="volume-label">
+                <span>🔉 Громкость</span>
+                <span>0%</span>
+            </div>
+            <!-- Декоративный ползунок.
+                 Он НЕ управляет звуком. -->
+            <input
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+            >
+            <div class="volume-value">
+                Громкость регулируется кнопками телефона
+            </div>
+        </div>
+    </div>
+    <audio id="sound" src="fart.mp3"></audio>
+    <script>
+        const sound = document.getElementById("sound");
+        function playSound() {
+            sound.currentTime = 0;
+            sound.play();
+        }
+    </script>
 </body>
 </html>
