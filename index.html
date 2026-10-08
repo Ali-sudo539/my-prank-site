@@ -11,100 +11,194 @@
         body {
             margin: 0;
             min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #f2f6fc;
+            color: #172b4d;
+        }
+        /* ВЕРХНЯЯ ПАНЕЛЬ */
+        header {
+            width: 100%;
+            height: 76px;
+            background: #ffffff;
+            border-bottom: 1px solid #dce5f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 35px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #1769e0;
+        }
+        .logo span {
+            color: #172b4d;
+        }
+        .header-buttons {
+            display: flex;
+            gap: 12px;
+        }
+        .header-button {
+            border: none;
+            padding: 12px 22px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .register {
+            background: #ffffff;
+            color: #1769e0;
+            border: 1px solid #1769e0;
+        }
+        .login {
+            background: #1769e0;
+            color: white;
+        }
+        .header-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(23, 105, 224, 0.2);
+        }
+        .header-button:active {
+            transform: scale(0.97);
+        }
+        /* ОСНОВНАЯ ОБЛАСТЬ */
+        main {
+            min-height: calc(100vh - 76px);
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: Arial, sans-serif;
-            background:
-                radial-gradient(circle at top, #1e5eff, transparent 45%),
-                linear-gradient(135deg, #06152f, #0b2d68);
-            color: white;
+            padding: 40px 20px;
         }
         .card {
-            width: 90%;
-            max-width: 420px;
-            padding: 40px 25px;
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 45px 30px;
+            border-radius: 18px;
+            box-shadow: 0 10px 35px rgba(31, 61, 104, 0.12);
             text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            border-radius: 25px;
-            backdrop-filter: blur(15px);
-            box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.45);
-            animation: appear 0.7s ease;
         }
         h1 {
             margin-top: 0;
-            font-size: 34px;
-            color: white;
+            margin-bottom: 12px;
+            font-size: 32px;
+            color: #172b4d;
         }
         .description {
-            color: #d9e7ff;
             margin-bottom: 35px;
+            color: #60728a;
             font-size: 16px;
+            line-height: 1.5;
         }
+        /* КНОПКА ЗВУКА */
         .sound-button {
-            width: 160px;
-            height: 160px;
-            border: 5px solid white;
+            width: 150px;
+            height: 150px;
+            border: none;
             border-radius: 50%;
-            font-size: 65px;
             cursor: pointer;
-            background: linear-gradient(
-                145deg,
-                #1473ff,
-                #0044c7
-            );
+            background: #1769e0;
+            color: white;
+            font-size: 55px;
             box-shadow:
-                0 0 30px rgba(20, 115, 255, 0.6),
-                0 15px 40px rgba(0, 0, 0, 0.4);
+                0 8px 25px rgba(23, 105, 224, 0.35);
             transition: 0.2s;
         }
         .sound-button:hover {
-            transform: scale(1.07);
+            transform: scale(1.05);
+            box-shadow:
+                0 12px 35px rgba(23, 105, 224, 0.45);
         }
         .sound-button:active {
-            transform: scale(0.92);
+            transform: scale(0.94);
         }
+        /* ИНФОРМАЦИЯ */
         .info {
             margin-top: 30px;
-            padding: 15px;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.08);
-            color: #e8f1ff;
+            padding: 18px;
+            border-radius: 12px;
+            background: #f1f6ff;
+            color: #53677f;
             font-size: 14px;
+            line-height: 1.5;
         }
         .green {
-            color: #20e070;
+            color: #159447;
             font-weight: bold;
         }
-        @keyframes appear {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
+        /* МОБИЛЬНАЯ ВЕРСИЯ */
+        @media (max-width: 600px) {
+            header {
+                height: auto;
+                padding: 15px;
+                flex-direction: column;
+                gap: 15px;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .header-buttons {
+                width: 100%;
+            }
+            .header-button {
+                flex: 1;
+            }
+            main {
+                min-height: calc(100vh - 130px);
+                padding: 25px 15px;
+            }
+            .card {
+                padding: 35px 20px;
+            }
+            h1 {
+                font-size: 28px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>Код Будущего</h1>
-        <p class="description">
-            Нажми на кнопку чтобы услышать код для регистрации
-        </p>
-        <button class="sound-button" onclick="playSound()">
-            
-        </button>
-        <div class="info">
-            не сообщайте код ни кому!!!<br><br>
-            <span class="green">✓ Готово!</span>
+    <!-- ВЕРХНЕЕ МЕНЮ -->
+    <header>
+        <div class="logo">
+            Код <span>Будущего</span>
         </div>
-    </div>
+        <div class="header-buttons">
+            <button
+                class="header-button register"
+                onclick="playSound()">
+                Регистрация
+            </button>
+            <button
+                class="header-button login"
+                onclick="playSound()">
+                Войти
+            </button>
+        </div>
+    </header>
+    <!-- ОСНОВНОЙ БЛОК -->
+    <main>
+        <div class="card">
+            <h1>Код для регистрации</h1>
+            <p class="description">
+                Нажмите на кнопку, чтобы услышать код
+            </p>
+            <button
+                class="sound-button"
+                onclick="playSound()">
+                🔊
+            </button>
+            <div class="info">
+                Не сообщайте код никому!
+                <br><br>
+                <span class="green">
+                    ✓ Готово!
+                </span>
+            </div>
+        </div>
+    </main>
+    <!-- ЗВУК -->
     <audio id="sound" src="fart.mp3"></audio>
+    <!-- JAVASCRIPT -->
     <script>
         const sound = document.getElementById("sound");
         function playSound() {
