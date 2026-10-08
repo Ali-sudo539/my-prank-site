@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sound Button</title>
+    <title>Код Будущего</title>
     <style>
         * {
             box-sizing: border-box;
@@ -16,41 +16,48 @@
             align-items: center;
             font-family: Arial, sans-serif;
             background:
-                radial-gradient(circle at top, #3b2b72, transparent 40%),
-                linear-gradient(135deg, #080812, #15152b);
+                radial-gradient(circle at top, #1e5eff, transparent 45%),
+                linear-gradient(135deg, #06152f, #0b2d68);
             color: white;
         }
         .card {
             width: 90%;
             max-width: 420px;
-            padding: 35px 25px;
+            padding: 40px 25px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 25px;
             backdrop-filter: blur(15px);
             box-shadow:
-                0 20px 60px rgba(0, 0, 0, 0.5);
+                0 20px 60px rgba(0, 0, 0, 0.45);
             animation: appear 0.7s ease;
         }
         h1 {
             margin-top: 0;
-            font-size: 32px;
+            font-size: 34px;
+            color: white;
         }
         .description {
-            color: #bdbdd0;
-            margin-bottom: 30px;
+            color: #d9e7ff;
+            margin-bottom: 35px;
+            font-size: 16px;
         }
         .sound-button {
-            width: 150px;
-            height: 150px;
-            border: none;
+            width: 160px;
+            height: 160px;
+            border: 5px solid white;
             border-radius: 50%;
-            font-size: 55px;
+            font-size: 65px;
             cursor: pointer;
-            background: linear-gradient(145deg, #8b5cf6, #6366f1);
+            background: linear-gradient(
+                145deg,
+                #1473ff,
+                #0044c7
+            );
             box-shadow:
-                0 10px 30px rgba(99, 102, 241, 0.5);
+                0 0 30px rgba(20, 115, 255, 0.6),
+                0 15px 40px rgba(0, 0, 0, 0.4);
             transition: 0.2s;
         }
         .sound-button:hover {
@@ -59,24 +66,17 @@
         .sound-button:active {
             transform: scale(0.92);
         }
-        .volume-container {
-            margin-top: 35px;
-        }
-        .volume-label {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-            color: #d8d8e5;
-        }
-        input[type="range"] {
-            width: 100%;
-            cursor: pointer;
-            accent-color: #8b5cf6;
-        }
-        .volume-value {
-            margin-top: 10px;
+        .info {
+            margin-top: 30px;
+            padding: 15px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #e8f1ff;
             font-size: 14px;
-            color: #aaaabd;
+        }
+        .green {
+            color: #20e070;
+            font-weight: bold;
         }
         @keyframes appear {
             from {
@@ -92,29 +92,16 @@
 </head>
 <body>
     <div class="card">
-        <h1>🔊 Код Будущего </h1>
+        <h1>Код Будущего</h1>
         <p class="description">
-            Нажми на кнопку 
+            Нажми на кнопку и послушай звук
         </p>
         <button class="sound-button" onclick="playSound()">
-            🔊
+            ✅
         </button>
-        <div class="volume-container">
-            <div class="volume-label">
-                <span>🔉 Громкость</span>
-                <span>0%</span>
-            </div>
-            <!-- Декоративный ползунок.
-                 Он НЕ управляет звуком. -->
-            <input
-                type="range"
-                min="0"
-                max="100"
-                value="0"
-            >
-            <div class="volume-value">
-                Громкость регулируется кнопками телефона
-            </div>
+        <div class="info">
+            Нажми на кнопку 🔵<br><br>
+            <span class="green">✓ Готово!</span>
         </div>
     </div>
     <audio id="sound" src="fart.mp3"></audio>
