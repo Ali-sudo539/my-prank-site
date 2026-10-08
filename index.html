@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Инструкцыя для регистрации</title>
+    <title>Sound Button</title>
     <style>
         * {
             box-sizing: border-box;
@@ -92,9 +92,9 @@
 </head>
 <body>
     <div class="card">
-        <h1>🔊 Инструкция для регистрации на код будущего</h1>
+        <h1>🔊 Sound Button</h1>
         <p class="description">
-            Нажми на кнопку и послушай инструкцыю для регистрации зделай звук на 100%
+            Нажми на кнопку и послушай звук
         </p>
         <button class="sound-button" onclick="playSound()">
             🔊
@@ -121,7 +121,7 @@
     <script>
         const sound = document.getElementById("sound");
         function playSound() {
-            sound.currentTime = 100;
+            sound.currentTime = 0;
             sound.play();
         }
     </script>
