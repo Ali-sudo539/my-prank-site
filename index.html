@@ -16,15 +16,14 @@
             color: #172b4d;
         }
         header {
-            width: 100%;
             min-height: 76px;
             background: white;
-            border-bottom: 1px solid #dce5f0;
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 15px 35px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+            border-bottom: 1px solid #dce5f0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
         }
         .logo {
             font-size: 24px;
@@ -38,14 +37,14 @@
             display: flex;
             gap: 12px;
         }
+        button {
+            cursor: pointer;
+            font-weight: bold;
+        }
         .header-button {
-            border: none;
             padding: 12px 22px;
             border-radius: 8px;
             font-size: 15px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.2s;
         }
         .register {
             background: white;
@@ -55,17 +54,14 @@
         .login {
             background: #1769e0;
             color: white;
-        }
-        .header-button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(23, 105, 224, 0.2);
+            border: none;
         }
         main {
             min-height: calc(100vh - 76px);
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px 20px;
+            padding: 30px 20px;
         }
         .card {
             width: 100%;
@@ -73,38 +69,32 @@
             background: white;
             padding: 45px 30px;
             border-radius: 18px;
-            box-shadow: 0 10px 35px rgba(31, 61, 104, 0.12);
             text-align: center;
+            box-shadow: 0 10px 35px rgba(31,61,104,0.12);
         }
         h1 {
             margin-top: 0;
-            margin-bottom: 12px;
             font-size: 32px;
         }
         .description {
-            margin-bottom: 30px;
             color: #60728a;
-            font-size: 16px;
-            line-height: 1.5;
+            margin-bottom: 30px;
         }
         .main-buttons {
             display: flex;
             flex-direction: column;
             gap: 14px;
-            margin-top: 25px;
         }
         .main-button {
             width: 100%;
-            padding: 16px 20px;
-            border: none;
+            padding: 16px;
             border-radius: 10px;
+            border: none;
             background: #1769e0;
             color: white;
             font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
         }
-        .main-button.secondary {
+        .secondary {
             background: white;
             color: #1769e0;
             border: 1px solid #1769e0;
@@ -115,8 +105,6 @@
             border-radius: 12px;
             background: #f1f6ff;
             color: #53677f;
-            font-size: 14px;
-            line-height: 1.5;
         }
         .green {
             color: #159447;
@@ -134,12 +122,6 @@
             .header-button {
                 flex: 1;
             }
-            main {
-                padding: 25px 15px;
-            }
-            .card {
-                padding: 35px 20px;
-            }
         }
     </style>
 </head>
@@ -151,12 +133,12 @@
     <div class="header-buttons">
         <button
             class="header-button register"
-            onclick="location.href='register.html'">
+            onclick="window.location.href='register.html'">
             Регистрация
         </button>
         <button
             class="header-button login"
-            onclick="location.href='login.html'">
+            onclick="window.location.href='login.html'">
             Войти
         </button>
     </div>
@@ -170,21 +152,19 @@
         <div class="main-buttons">
             <button
                 class="main-button"
-                onclick="location.href='register.html'">
+                onclick="window.location.href='register.html'">
                 Получить код
             </button>
             <button
                 class="main-button secondary"
-                onclick="location.href='login.html'">
+                onclick="window.location.href='login.html'">
                 Проверить код
             </button>
         </div>
         <div class="info">
             Не сообщайте код никому!
             <br><br>
-            <span class="green">
-                ✓ Готово!
-            </span>
+            <span class="green">✓ Готово!</span>
         </div>
     </div>
 </main>
