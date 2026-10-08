@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация — Код Будущего</title>
+    <title>Регистрация</title>
     <style>
         * {
             box-sizing: border-box;
@@ -25,11 +25,10 @@
             background: white;
             padding: 35px;
             border-radius: 18px;
-            box-shadow: 0 10px 35px rgba(31, 61, 104, 0.12);
+            box-shadow: 0 10px 35px rgba(31,61,104,0.12);
         }
         h1 {
             text-align: center;
-            margin-top: 0;
         }
         .demo {
             text-align: center;
@@ -72,22 +71,10 @@
         Демонстрационная страница.<br>
         Данные не отправляются и не сохраняются.
     </p>
-    <form onsubmit="demoRegister(event)">
-        <input
-            type="text"
-            placeholder="Имя"
-            autocomplete="off"
-            required>
-        <input
-            type="text"
-            placeholder="Логин"
-            autocomplete="off"
-            required>
-        <input
-            type="password"
-            placeholder="Пароль"
-            autocomplete="off"
-            required>
+    <form onsubmit="event.preventDefault(); alert('Демонстрация: данные не отправлены.'); this.reset();">
+        <input type="text" placeholder="Имя" autocomplete="off" required>
+        <input type="text" placeholder="Логин" autocomplete="off" required>
+        <input type="password" placeholder="Пароль" autocomplete="off" required>
         <button type="submit">
             Зарегистрироваться
         </button>
@@ -96,12 +83,5 @@
         ← Вернуться назад
     </a>
 </div>
-<script>
-function demoRegister(event) {
-    event.preventDefault();
-    alert("Это демонстрация. Данные никуда не отправляются.");
-    event.target.reset();
-}
-</script>
 </body>
 </html>
