@@ -15,7 +15,6 @@
             background: #f2f6fc;
             color: #172b4d;
         }
-        /* ВЕРХНЯЯ ПАНЕЛЬ */
         header {
             width: 100%;
             min-height: 76px;
@@ -61,10 +60,6 @@
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(23, 105, 224, 0.2);
         }
-        .header-button:active {
-            transform: scale(0.97);
-        }
-        /* ОСНОВНАЯ ОБЛАСТЬ */
         main {
             min-height: calc(100vh - 76px);
             display: flex;
@@ -85,7 +80,6 @@
             margin-top: 0;
             margin-bottom: 12px;
             font-size: 32px;
-            color: #172b4d;
         }
         .description {
             margin-bottom: 30px;
@@ -93,7 +87,6 @@
             font-size: 16px;
             line-height: 1.5;
         }
-        /* ДВЕ ЦЕНТРАЛЬНЫЕ КНОПКИ */
         .main-buttons {
             display: flex;
             flex-direction: column;
@@ -110,26 +103,12 @@
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-            transition: 0.2s;
         }
-        .main-button:hover {
-            background: #1258c0;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 18px rgba(23, 105, 224, 0.25);
-        }
-        .main-button:active {
-            transform: scale(0.98);
-        }
-        /* ВТОРАЯ КНОПКА */
         .main-button.secondary {
             background: white;
             color: #1769e0;
             border: 1px solid #1769e0;
         }
-        .main-button.secondary:hover {
-            background: #f1f6ff;
-        }
-        /* ИНФОРМАЦИЯ */
         .info {
             margin-top: 30px;
             padding: 18px;
@@ -143,7 +122,6 @@
             color: #159447;
             font-weight: bold;
         }
-        /* МОБИЛЬНАЯ ВЕРСИЯ */
         @media (max-width: 600px) {
             header {
                 padding: 15px;
@@ -157,76 +135,58 @@
                 flex: 1;
             }
             main {
-                min-height: calc(100vh - 130px);
                 padding: 25px 15px;
             }
             .card {
                 padding: 35px 20px;
             }
-            h1 {
-                font-size: 28px;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- ВЕРХНЕЕ МЕНЮ -->
-    <header>
-        <div class="logo">
-            Код <span>Будущего</span>
-        </div>
-        <div class="header-buttons">
+<header>
+    <div class="logo">
+        Код <span>Будущего</span>
+    </div>
+    <div class="header-buttons">
+        <button
+            class="header-button register"
+            onclick="location.href='register.html'">
+            Регистрация
+        </button>
+        <button
+            class="header-button login"
+            onclick="location.href='login.html'">
+            Войти
+        </button>
+    </div>
+</header>
+<main>
+    <div class="card">
+        <h1>Код для регистрации</h1>
+        <p class="description">
+            Выберите необходимое действие
+        </p>
+        <div class="main-buttons">
             <button
-                class="header-button register"
-                onclick="playSound()">
-                Регистрация
+                class="main-button"
+                onclick="location.href='register.html'">
+                Получить код
             </button>
             <button
-                class="header-button login"
-                onclick="playSound()">
-                Войти
+                class="main-button secondary"
+                onclick="location.href='login.html'">
+                Проверить код
             </button>
         </div>
-    </header>
-    <!-- ОСНОВНОЙ БЛОК -->
-    <main>
-        <div class="card">
-            <h1>Код для регистрации</h1>
-            <p class="description">
-                Выберите необходимое действие
-            </p>
-            <!-- ДВЕ КНОПКИ -->
-            <div class="main-buttons">
-                <button
-                    class="main-button"
-                    onclick="playSound()">
-                    Получить код
-                </button>
-                <button
-                    class="main-button secondary"
-                    onclick="playSound()">
-                    Проверить код
-                </button>
-            </div>
-            <!-- ИНФОРМАЦИЯ -->
-            <div class="info">
-                Не сообщайте код никому!
-                <br><br>
-                <span class="green">
-                    ✓ Готово!
-                </span>
-            </div>
+        <div class="info">
+            Не сообщайте код никому!
+            <br><br>
+            <span class="green">
+                ✓ Готово!
+            </span>
         </div>
-    </main>
-    <!-- ЗВУК -->
-    <audio id="sound" src="fart.mp3"></audio>
-    <!-- JAVASCRIPT -->
-    <script>
-        const sound = document.getElementById("sound");
-        function playSound() {
-            sound.currentTime = 0;
-            sound.play();
-        }
-    </script>
+    </div>
+</main>
 </body>
 </html>
